@@ -5,7 +5,25 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 
-    monster A;
+    monster A("Alissa", 100,10);
+
+    //monster x[3] = {{"Jens"},{"Micheal", 20}, {"test"}};
+    monster c;
+
+    monster *p;
+    p= &A;
+    p -> display();
+    p = &c;
+    p -> display();
+    p = new monster("Sarina", 20, 5000);
+    p -> display();
+
+    //Delete one
+    delete p;
+
+    //Delete all monsters
+    p = new monster[3];
+    delete [] p;
   /*
  
  monster *p,x;
