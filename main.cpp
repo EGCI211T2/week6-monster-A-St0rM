@@ -5,35 +5,29 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 
-    monster A("Alissa", 100,10);
+  Thanos T;
+  int n;
+  cout<<"How many monsters?";
+  cin>>n;
 
-    //monster x[3] = {{"Jens"},{"Micheal", 20}, {"test"}};
-    monster c;
-
-    monster *p;
-    p= &A;
-    p -> display();
-    p = &c;
-    p -> display();
-    p = new monster("Sarina", 20, 5000);
-    p -> display();
-
-    //Delete one
-    delete p;
-
-    //Delete all monsters
-    p = new monster[3];
-    delete [] p;
-  /*
+  monster *m=new monster[n];
  
- monster *p,x;
-  p=&x;
-  p=new monster;
- delete p;
+  /* Add some story*/
+  ++T;
+  ++T;
+  T.snap_finger(m,n);
+  ++T;
+  ++T;
+  T.snap_finger(m,n);
+    ++T;
+  ++T;
+  T.snap_finger(m,n);
 
- p=new monster[3];
- delete []p;
+  int i;
+  for(i=0;i<n;i++)
+      m[i].print();
+  
 
-*/
+  delete [] m;
 
 }
