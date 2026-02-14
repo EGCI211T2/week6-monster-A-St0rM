@@ -51,17 +51,17 @@ bool monster::operator > (monster &x){
 
 void monster::operator += (int v){
     hp += v;
-    if (hp <= 0) hp = 1; // (valgfri sikkerhed) så hp ikke ender på 0 ved uheld
+    if (hp <= 0) hp = 1; 
 }
 
 void monster::operator += (monster &x){
     this->hp += x.hp;
-    x.hp = 0; // du havde det her, det er okay
+    x.hp = 0;
 }
 
 void monster::operator --(){
     hp--;
-    if (hp < 0) hp = 0;  // så den ikke går negativ (gør "kill" pænere)
+    if (hp < 0) hp = 0;  //decreasing hp
 }
 
 monster::~monster(){
