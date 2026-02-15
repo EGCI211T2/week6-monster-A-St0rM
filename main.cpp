@@ -2,6 +2,7 @@
 using namespace std;
 
 #include "monster.h"
+#include "thanos.h"
 
 int main(int argc, char* argv[]) {
 
@@ -19,13 +20,13 @@ int main(int argc, char* argv[]) {
   ++T;
   ++T;
   T.snap_finger(m,n);
-    ++T;
+  ++T;
   ++T;
   T.snap_finger(m,n);
 
   int i;
   for(i=0;i<n;i++)
-      m[i].print();
+      m[i].display();
   
 
   delete [] m;

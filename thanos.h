@@ -1,5 +1,6 @@
 #ifndef thanos_h
 #define thanos_h
+using namespace std;
 
 class Thanos {
 private:
@@ -12,7 +13,7 @@ public:
     void operator++();
 };
 
-//Thanos::Thanos(int s, int h) : stones(s), hp(h) {}
+Thanos::Thanos(int s, int h) : stones(s), hp(h) {}
 
 Thanos::~Thanos() {}
 
@@ -36,20 +37,16 @@ void Thanos::snap_finger(monster m[], int n) {
         return;
     }
 
-    // Monster with 0 hp used for comparison
     monster zero("ZERO", 0, 0);
 
-    int kills = n / 2;    
+    int kills = n / 2;
     int killed = 0;
 
-    // kill random monsters 
     while (killed < kills) {
         int idx = rand() % n;
 
-        // alive? (hp > 0)
-        if (m[idx] > zero) {
-            // kill by decrementing until hp becomes 0
-            while (m[idx] > zero) {
+        if (m[idx] > zero) {          // alive
+            while (m[idx] > zero) {   // kill it
                 --m[idx];
             }
             killed++;
@@ -64,5 +61,6 @@ void Thanos::snap_finger(monster m[], int n) {
         m[i].display();
         cout << "----\n";
     }
+}
 
 #endif
