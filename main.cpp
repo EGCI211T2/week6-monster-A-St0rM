@@ -1,5 +1,8 @@
 #include <iostream>
 using namespace std;
+#include <cstdlib>
+#include <ctime>
+
 
 #include "monster.h"
 #include "thanos.h"
@@ -10,6 +13,8 @@ int main(int argc, char* argv[]) {
   int n;
   cout<<"How many monsters?";
   cin>>n;
+  srand(time(nullptr));
+
 
   monster *m=new monster[n];
  

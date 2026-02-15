@@ -1,6 +1,10 @@
 #ifndef thanos_h
 #define thanos_h
 using namespace std;
+#include <iostream>
+#include <cstdlib>
+#include "monster.h"
+using namespace std;
 
 class Thanos {
 private:

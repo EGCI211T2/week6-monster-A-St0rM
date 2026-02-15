@@ -5,6 +5,7 @@
 #include <string>
 using namespace std;
 
+
 class monster{
 private:
     string name;
@@ -38,12 +39,12 @@ inline monster::monster(int h, int p){
     potion = (p <= 0) ? 1 : p;      // same for potion
 }
 
-monster::monster(string n, int h, int p){
+monster::monster(string n, int h ,int p){
     name = n;
-    hp = (h <= 0) ? 1 : h;          // hp != 0
-    potion = (p <= 0) ? 1 : p;
-    cout << "Monster " << name << " is here" << endl;
+    hp = (h < 0) ? (10 + rand()%91) : h;    // 10..100
+    potion = (p < 0) ? (1 + rand()%3) : p;   // 1..3
 }
+
 
 bool monster::operator > (monster &x){
     return hp > x.hp;
@@ -60,9 +61,9 @@ void monster::operator += (monster &x){
 }
 
 void monster::operator --(){
-    hp--;
-    if (hp < 0) hp = 0;  //decreasing hp
+    if (hp > 0) hp--;
 }
+
 
 monster::~monster(){
     cout << name << " is gone" << endl;
