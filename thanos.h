@@ -4,7 +4,6 @@ using namespace std;
 #include <iostream>
 #include <cstdlib>
 #include "monster.h"
-using namespace std;
 
 class Thanos {
 private:
@@ -29,13 +28,6 @@ void Thanos::snap_finger(monster m[], int n) {
     cout << "\n--- Thanos snaps! ---\n";
     cout << "Stones: " << stones << " | Thanos HP: " << hp << "\n\n";
 
-    cout << "Monsters BEFORE snap:\n";
-    for (int i = 0; i < n; i++) {
-        cout << "Monster [" << i << "]\n";
-        m[i].display();
-        cout << "----\n";
-    }
-
     if (stones != 6) {
         cout << "Snap failed: need 6 stones.\n";
         return;
@@ -58,13 +50,6 @@ void Thanos::snap_finger(monster m[], int n) {
     }
 
     cout << "\nSnap success! Killed " << kills << " monsters.\n";
-
-    cout << "\nMonsters AFTER snap:\n";
-    for (int i = 0; i < n; i++) {
-        cout << "Monster [" << i << "]\n";
-        m[i].display();
-        cout << "----\n";
-    }
 }
 
 #endif

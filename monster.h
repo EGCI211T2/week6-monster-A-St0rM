@@ -13,9 +13,10 @@ private:
 
 public:
     void Attack(monster &); 
-    void heal();            
+    void heal();   
+    int getHP();         
 
-    monster(string = "random", int = 1, int = 1);
+    monster(string = "random", int = -1, int = -1);
     monster(int, int);
     ~monster();
 
@@ -32,6 +33,11 @@ inline void monster::display(){
     cout << "HP " << hp << endl;
     cout << "Potion " << potion << endl;
 }
+
+  int monster::getHP(){
+    return hp;
+  }
+
 
 inline monster::monster(int h, int p){
     name = "SUPER MONSTER";
@@ -66,7 +72,6 @@ void monster::operator --(){
 
 
 monster::~monster(){
-    cout << name << " is gone" << endl;
 }
 
 #endif
